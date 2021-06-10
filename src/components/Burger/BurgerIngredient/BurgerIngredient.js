@@ -39,8 +39,8 @@ import PropTypes from 'prop-types';
     
 }
 
-//DEfining proptypes
-BurgerIngredient.PropTypes = {
+//Defining proptypes
+BurgerIngredient.propTypes = {
     type: PropTypes.string.isRequired
 };
 
