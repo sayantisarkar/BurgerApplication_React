@@ -3,7 +3,7 @@ import Aux from '../hoc/Auxillary/Auxillary';
 import Burger from '../components/Burger/Burger';
 import BuildControls from '../components/Burger/BuildControls/BuildControls';
 import Modal from '../components/UI/Modal/Modal';
-import OrderSummary from '../components/Burger/OrderSummary/OderSummary';
+import OrderSummary from '../components/Burger/OrderSummary/OrderSummaryy';
 
 const INGREDIENT_PRICES = {
     salad: 1,
@@ -76,6 +76,10 @@ class BurgerBuilder extends Component {
        this.setState({purchase:true}); 
     }
 
+    purchaseCancelHandler= ()=>{
+        this.setState({purchase:false});
+    }
+
 
     render() {
         const disabledInfo = { ...this.state.ingredients };
@@ -96,7 +100,7 @@ class BurgerBuilder extends Component {
                     />
       
                 <Modal show={this.state.purchase}>
-                    <OrderSummary ingredients={this.state.ingredients} />
+                    <OrderSummary ingredients={this.state.ingredients}  modalClosed ={this.purchaseCancelHandler}/>
                 </Modal>
 
             </Aux>
